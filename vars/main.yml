@@ -1,1 +1,13 @@
-test
+wordpress_db: wordpress
+wordpress_user: wordpress
+wordpress_password: wordpress_password
+mysql_root_password: super-secure-password
+
+mysql_database:
+  - name: "{{wordpress_db}}"
+
+mysql_user:
+  - name: "{{wordpress_db}}"
+    host: "%"
+    password: "{{wordpress_password}}"
+    priv: "{{wordpress_user}}.*:ALL"
